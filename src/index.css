@@ -1,0 +1,62 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+:root {
+  --primary-color: #84bb75;
+  --secondary-color: #5d8a54;
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --accent-color: #f0f7ed;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  min-height: 100vh;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-secondary transition duration-300 shadow-md hover:shadow-lg;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-primary border-2 border-primary px-6 py-3 rounded-full font-semibold hover:bg-accent hover:border-secondary hover:text-secondary transition duration-300 shadow-md hover:shadow-lg;
+  }
+
+  .card {
+    @apply bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300 border border-accent;
+  }
+
+  .section-title {
+    @apply text-4xl font-bold mb-6 text-text;
+  }
+
+  .container {
+    @apply px-4 mx-auto max-w-7xl;
+  }
+}
+
+/* Nood-specific styles */
+.nood-gradient-text {
+  @apply text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary;
+}
+
+.nood-card {
+  @apply card p-6;
+}
+
+.nood-input {
+  @apply bg-white border border-accent rounded-lg px-4 py-2 text-text placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent;
+}
+
+.nood-select {
+  @apply bg-white border border-accent rounded-lg px-4 py-2 text-text focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent;
+}
+
+/* Accessibility */
+.focus-visible {
+  @apply outline-none ring-2 ring-primary;
+}
